@@ -1,5 +1,5 @@
 name: flux
-description: "A new Flutter project."
+description: "Building a workout routine, reading every day, or breaking bad habits—made simple"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -37,7 +37,7 @@ dependencies:
   fl_chart: ^1.0.0
   path_provider: ^2.1.5
   shared_preferences: ^2.2.2
-  intl: ^0.19.0
+  intl: ^0.20.2
   flutter_launcher_icons: ^0.13.1
   # Advanced Analytics Dependencies
   table_calendar: ^3.0.9

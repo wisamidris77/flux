@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:intl/intl.dart';
+
 
 class LocalizationService {
   static final LocalizationService _instance = LocalizationService._internal();
@@ -117,7 +117,7 @@ class LocalizationService {
   bool get isCurrentLanguageRTL => isRTL(currentLanguageCode);
 
   // Get text direction
-  TextDirection get textDirection => isCurrentLanguageRTL ? TextDirection.rtl : TextDirection.ltr;
+  ui.TextDirection get textDirection => isCurrentLanguageRTL ? ui.TextDirection.rtl : ui.TextDirection.ltr;
 
   // Track missing translations (debug only)
   static void trackMissingTranslation(String key, String languageCode) {
