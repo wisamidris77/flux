@@ -783,7 +783,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: color),
@@ -881,7 +881,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 drawHorizontalLine: true,
                 horizontalInterval: 20,
                 getDrawingHorizontalLine: (value) => FlLine(
-                  color: Colors.grey.withOpacity(0.2),
+                  color: Colors.grey.withValues(alpha: 0.2),
                   strokeWidth: 1,
                 ),
                 drawVerticalLine: false,
@@ -946,8 +946,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: habit.currentStreak > 0
-                      ? Colors.green.withOpacity(0.1)
-                      : Colors.red.withOpacity(0.1),
+                      ? Colors.green.withValues(alpha: 0.1)
+                      : Colors.red.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
@@ -1010,8 +1010,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 height: 40,
                 decoration: BoxDecoration(
                   color: isPositive 
-                      ? Colors.green.withOpacity(0.1) 
-                      : Colors.red.withOpacity(0.1),
+                      ? Colors.green.withValues(alpha: 0.1) 
+                      : Colors.red.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(

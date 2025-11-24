@@ -124,7 +124,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            widget.habit.color?.withOpacity(0.8) ?? Theme.of(context).colorScheme.primary.withOpacity(0.8),
+            widget.habit.color?.withValues(alpha: 0.8) ?? Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
             widget.habit.color ?? Theme.of(context).colorScheme.primary,
           ],
           begin: Alignment.topLeft,
@@ -136,7 +136,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
         children: [
           Container(
             padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(16)),
             child: Icon(widget.habit.icon ?? Icons.star, color: Colors.white, size: 32),
           ),
           SizedBox(width: 16),
@@ -149,7 +149,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 SizedBox(height: 4),
-                Text(_getMainTitle, style: TextStyle(fontSize: 14, color: Colors.white.withOpacity(0.9))),
+                Text(_getMainTitle, style: TextStyle(fontSize: 14, color: Colors.white.withValues(alpha: 0.9))),
               ],
             ),
           ),
@@ -163,9 +163,9 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       duration: Duration(milliseconds: 300),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: _isSkipped ? Colors.orange.withOpacity(0.1) : Colors.grey.withOpacity(0.05),
+        color: _isSkipped ? Colors.orange.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: _isSkipped ? Colors.orange.withOpacity(0.3) : Colors.grey.withOpacity(0.2), width: 2),
+        border: Border.all(color: _isSkipped ? Colors.orange.withValues(alpha: 0.3) : Colors.grey.withValues(alpha: 0.2), width: 2),
       ),
       child: Row(
         children: [
@@ -218,7 +218,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.3)),
+        border: Border.all(color: Theme.of(context).dividerColor.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -244,7 +244,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
             height: 80,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: _isDone ? Colors.green.withOpacity(0.15) : Colors.red.withOpacity(0.15),
+              color: _isDone ? Colors.green.withValues(alpha: 0.15) : Colors.red.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: _isDone ? Colors.green : Colors.red, width: 2),
             ),
@@ -276,7 +276,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       // decoration: BoxDecoration(
       //   color: Theme.of(context).colorScheme.surface,
       //   borderRadius: BorderRadius.circular(16),
-      //   border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.3)),
+      //   border: Border.all(color: Theme.of(context).dividerColor.withValues(alpha: 0.3)),
       // ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -286,10 +286,10 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Theme.of(context).colorScheme.primary.withOpacity(0.1), Theme.of(context).colorScheme.primary.withOpacity(0.05)],
+                  colors: [Theme.of(context).colorScheme.primary.withValues(alpha: 0.1), Theme.of(context).colorScheme.primary.withValues(alpha: 0.05)],
                 ),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Theme.of(context).colorScheme.primary.withOpacity(0.3)),
+                border: Border.all(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -322,9 +322,9 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.05),
+                color: Colors.grey.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
               ),
               child: Column(
                 children: [
@@ -338,7 +338,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                         width: 30,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                         ),
                         child: IconButton.filledTonal(
                           style: IconButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
@@ -365,7 +365,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.surface,
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: Theme.of(context).colorScheme.primary.withOpacity(0.3)),
+                            border: Border.all(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3)),
                           ),
                           child: TextFormField(
                             controller: _countController,
@@ -396,7 +396,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                         width: 30,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                         ),
                         child: IconButton(
                           style: IconButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
@@ -441,7 +441,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
             // Container(
             //   padding: EdgeInsets.all(16),
             //   decoration: BoxDecoration(
-            //     color: Colors.grey.withOpacity(0.05),
+            //     color: Colors.grey.withValues(alpha: 0.05),
             //     borderRadius: BorderRadius.circular(12),
             //   ),
             //   child: Column(
@@ -461,8 +461,8 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
             //         data: SliderTheme.of(context).copyWith(
             //           thumbColor: Theme.of(context).colorScheme.primary,
             //           activeTrackColor: Theme.of(context).colorScheme.primary,
-            //           inactiveTrackColor: Theme.of(context).colorScheme.primary.withOpacity(0.3),
-            //           overlayColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            //           inactiveTrackColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
+            //           overlayColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             //           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12),
             //           trackHeight: 6,
             //         ),
@@ -496,7 +496,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.5)),
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.5)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -525,11 +525,11 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: isOnTrack
-              ? [Colors.green.withOpacity(0.1), Colors.green.withOpacity(0.05)]
-              : [Colors.orange.withOpacity(0.1), Colors.orange.withOpacity(0.05)],
+              ? [Colors.green.withValues(alpha: 0.1), Colors.green.withValues(alpha: 0.05)]
+              : [Colors.orange.withValues(alpha: 0.1), Colors.orange.withValues(alpha: 0.05)],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: isOnTrack ? Colors.green.withOpacity(0.3) : Colors.orange.withOpacity(0.3), width: 2),
+        border: Border.all(color: isOnTrack ? Colors.green.withValues(alpha: 0.3) : Colors.orange.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -566,7 +566,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 8,
-              backgroundColor: Colors.grey.withOpacity(0.2),
+              backgroundColor: Colors.grey.withValues(alpha: 0.2),
               valueColor: AlwaysStoppedAnimation<Color>(isOnTrack ? Colors.green : Colors.orange),
             ),
           ),
@@ -586,7 +586,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.3)),
+        border: Border.all(color: Theme.of(context).dividerColor.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -608,7 +608,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Theme.of(context).dividerColor.withOpacity(0.5)),
+                borderSide: BorderSide(color: Theme.of(context).dividerColor.withValues(alpha: 0.5)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -627,9 +627,9 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.orange.withOpacity(0.05),
+        color: Colors.orange.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.orange.withOpacity(0.3)),
+        border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -654,7 +654,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.orange.withOpacity(0.3)),
+                borderSide: BorderSide(color: Colors.orange.withValues(alpha: 0.3)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -745,7 +745,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: value == -1 ? Colors.grey : Theme.of(context).colorScheme.primary.withOpacity(0.1),
+          backgroundColor: value == -1 ? Colors.grey : Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
           foregroundColor: value == -1 ? Colors.white : Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           minimumSize: Size(50, 32),

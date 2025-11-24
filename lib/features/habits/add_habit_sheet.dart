@@ -102,7 +102,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
               width: 40, 
               height: 4, 
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.3),
+                color: Colors.grey.withValues(alpha: 0.3),
                 borderRadius: BorderRadius.circular(4),
               ),
             ),
@@ -385,7 +385,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.5)),
+        border: Border.all(color: Theme.of(context).dividerColor.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: HabitType.values.map((type) {
@@ -531,7 +531,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
       height: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.5)),
+        border: Border.all(color: Theme.of(context).dividerColor.withValues(alpha: 0.5)),
       ),
       child: GridView.builder(
         padding: EdgeInsets.all(8),
@@ -555,7 +555,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
                 duration: Duration(milliseconds: 200),
                 decoration: BoxDecoration(
                   color: isSelected 
-                    ? Theme.of(context).colorScheme.primary.withOpacity(0.2) 
+                    ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.2) 
                     : Theme.of(context).cardColor,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -569,7 +569,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
                   icon,
                   color: isSelected 
                     ? Theme.of(context).colorScheme.primary 
-                    : Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                    : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                   size: 24,
                 ),
               ),
@@ -605,7 +605,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withOpacity(0.4),
+                    color: color.withValues(alpha: 0.4),
                     blurRadius: isSelected ? 8 : 0,
                     spreadRadius: isSelected ? 2 : 0,
                   ),

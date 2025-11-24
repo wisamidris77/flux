@@ -575,10 +575,10 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
       margin: EdgeInsets.only(bottom: 12),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: isPositive ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
+        color: isPositive ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: isPositive ? Colors.green.withOpacity(0.3) : Colors.red.withOpacity(0.3),
+          color: isPositive ? Colors.green.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -643,9 +643,9 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
       margin: EdgeInsets.only(bottom: 12),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: insight.color.withOpacity(0.1),
+        color: insight.color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: insight.color.withOpacity(0.3)),
+        border: Border.all(color: insight.color.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -698,9 +698,9 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
       margin: EdgeInsets.only(bottom: 12),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(0.1),
+        color: Colors.blue.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.blue.withOpacity(0.3)),
+        border: Border.all(color: Colors.blue.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [

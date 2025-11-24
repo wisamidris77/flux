@@ -144,12 +144,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               end: Alignment.bottomRight,
               colors: [
                 _headerColorAnimation.value ?? _stepColors[_currentStep],
-                (_headerColorAnimation.value ?? _stepColors[_currentStep]).withOpacity(0.8),
+                (_headerColorAnimation.value ?? _stepColors[_currentStep]).withValues(alpha: 0.8),
               ],
             ),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
             boxShadow: [
-              BoxShadow(color: (_headerColorAnimation.value ?? _stepColors[_currentStep]).withOpacity(0.3), blurRadius: 15, offset: Offset(0, 5)),
+              BoxShadow(color: (_headerColorAnimation.value ?? _stepColors[_currentStep]).withValues(alpha: 0.3), blurRadius: 15, offset: Offset(0, 5)),
             ],
           ),
           child: Padding(
@@ -168,7 +168,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                         height: 4,
                         margin: EdgeInsets.symmetric(horizontal: 2),
                         decoration: BoxDecoration(
-                          color: index <= _currentStep ? Colors.white : Colors.white.withOpacity(0.3),
+                          color: index <= _currentStep ? Colors.white : Colors.white.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(2),
                         ),
                       ),
@@ -178,7 +178,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                 SizedBox(height: 8),
                 Text(
                   '${_currentStep + 1}/${_steps.length} - ${_steps[_currentStep]}',
-                  style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 14),
+                  style: TextStyle(color: Colors.white.withValues(alpha: 0.9), fontSize: 14),
                 ),
               ],
             ),
@@ -200,7 +200,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               Container(
                 width: 120,
                 height: 120,
-                decoration: BoxDecoration(color: _stepColors[_currentStep].withOpacity(0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: _stepColors[_currentStep].withValues(alpha: 0.1), shape: BoxShape.circle),
                 child: Icon(Icons.explore, size: 60, color: _stepColors[_currentStep]),
               ),
               SizedBox(height: 32),
@@ -526,7 +526,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               Container(
                 width: 120,
                 height: 120,
-                decoration: BoxDecoration(color: _stepColors[_currentStep].withOpacity(0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: _stepColors[_currentStep].withValues(alpha: 0.1), shape: BoxShape.circle),
                 child: Icon(Icons.celebration, size: 60, color: _stepColors[_currentStep]),
               ),
               SizedBox(height: 32),
@@ -594,7 +594,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
         color: isPrimary ? _stepColors[_currentStep] : Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: isPrimary ? _stepColors[_currentStep] : Colors.grey[300]!, width: 2),
-        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1), blurRadius: 10, offset: Offset(0, 5))],
+        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 10, offset: Offset(0, 5))],
       ),
       child: InkWell(
         onTap: onTap,
@@ -613,7 +613,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               SizedBox(height: 4),
               Text(
                 subtitle,
-                style: TextStyle(color: isPrimary ? Colors.white.withOpacity(0.8) : Colors.grey[600], fontSize: 12),
+                style: TextStyle(color: isPrimary ? Colors.white.withValues(alpha: 0.8) : Colors.grey[600], fontSize: 12),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -627,10 +627,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
     return Container(
       margin: EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: isSelected ? _stepColors[_currentStep].withOpacity(0.1) : Colors.white,
+        color: isSelected ? _stepColors[_currentStep].withValues(alpha: 0.1) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: isSelected ? _stepColors[_currentStep] : Colors.grey[300]!, width: 2),
-        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1), blurRadius: 5, offset: Offset(0, 2))],
+        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5, offset: Offset(0, 2))],
       ),
       child: ListTile(
         title: Text(
@@ -647,10 +647,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
     return Container(
       margin: EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: isSelected ? _stepColors[_currentStep].withOpacity(0.1) : Colors.white,
+        color: isSelected ? _stepColors[_currentStep].withValues(alpha: 0.1) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: isSelected ? _stepColors[_currentStep] : Colors.grey[300]!, width: 2),
-        boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1), blurRadius: 5, offset: Offset(0, 2))],
+        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5, offset: Offset(0, 2))],
       ),
       child: ListTile(
         title: Text(

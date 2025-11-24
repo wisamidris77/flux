@@ -86,7 +86,7 @@ class _QuickEntryWidgetState extends State<QuickEntryWidget> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -106,7 +106,7 @@ class _QuickEntryWidgetState extends State<QuickEntryWidget> {
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: LinearProgressIndicator(
               value: habitsToday.isEmpty ? 1.0 : completedToday.length / habitsToday.length,
-              backgroundColor: Colors.grey.withOpacity(0.2),
+              backgroundColor: Colors.grey.withValues(alpha: 0.2),
               valueColor: AlwaysStoppedAnimation<Color>(
                 completedToday.length == habitsToday.length 
                     ? Colors.green 
@@ -133,21 +133,21 @@ class _QuickEntryWidgetState extends State<QuickEntryWidget> {
       margin: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(
         color: isCompleted 
-            ? Colors.green.withOpacity(0.1) 
-            : Colors.grey.withOpacity(0.05),
+            ? Colors.green.withValues(alpha: 0.1) 
+            : Colors.grey.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isCompleted 
-              ? Colors.green.withOpacity(0.3)
-              : Colors.grey.withOpacity(0.2),
+              ? Colors.green.withValues(alpha: 0.3)
+              : Colors.grey.withValues(alpha: 0.2),
         ),
       ),
       child: ListTile(
         leading: Container(
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: habit.color?.withOpacity(0.1) ?? 
-                Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            color: habit.color?.withValues(alpha: 0.1) ?? 
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -221,8 +221,8 @@ class _QuickEntryWidgetState extends State<QuickEntryWidget> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         decoration: BoxDecoration(
-          color: habit.color?.withOpacity(0.1) ?? 
-              Theme.of(context).colorScheme.primary.withOpacity(0.1),
+          color: habit.color?.withValues(alpha: 0.1) ?? 
+              Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: habit.color ?? Theme.of(context).colorScheme.primary,
@@ -354,8 +354,8 @@ class _QuickEntryDialogState extends State<QuickEntryDialog> {
                 Container(
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: widget.habit.color?.withOpacity(0.1) ?? 
-                        Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                    color: widget.habit.color?.withValues(alpha: 0.1) ?? 
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
@@ -390,7 +390,7 @@ class _QuickEntryDialogState extends State<QuickEntryDialog> {
               Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: _isDone ? Colors.green.withOpacity(0.1) : Colors.grey.withOpacity(0.1),
+                  color: _isDone ? Colors.green.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: _isDone ? Colors.green : Colors.grey,
@@ -520,7 +520,7 @@ class _QuickEntryDialogState extends State<QuickEntryDialog> {
         decoration: BoxDecoration(
           color: _quickValue == value 
               ? (widget.habit.color ?? Theme.of(context).colorScheme.primary)
-              : Colors.grey.withOpacity(0.1),
+              : Colors.grey.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: _quickValue == value 

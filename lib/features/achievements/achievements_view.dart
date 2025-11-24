@@ -54,7 +54,7 @@ class _AchievementsViewState extends State<AchievementsView> {
             gradient: LinearGradient(
               colors: [
                 Theme.of(context).colorScheme.primary,
-                Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -111,9 +111,9 @@ class _AchievementsViewState extends State<AchievementsView> {
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Theme.of(context).colorScheme.primary.withOpacity(0.3)),
+                  border: Border.all(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3)),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -187,15 +187,15 @@ class _AchievementsViewState extends State<AchievementsView> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.1),
-            Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -205,7 +205,7 @@ class _AchievementsViewState extends State<AchievementsView> {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -259,7 +259,7 @@ class _AchievementsViewState extends State<AchievementsView> {
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 8,
-              backgroundColor: Colors.grey.withOpacity(0.2),
+              backgroundColor: Colors.grey.withValues(alpha: 0.2),
               valueColor: AlwaysStoppedAnimation<Color>(
                 Theme.of(context).colorScheme.primary,
               ),
@@ -334,29 +334,29 @@ class _AchievementsViewState extends State<AchievementsView> {
           gradient: isUnlocked
               ? LinearGradient(
                   colors: [
-                    achievement.rarity.color.withOpacity(0.1),
-                    achievement.color.withOpacity(0.1),
+                    achievement.rarity.color.withValues(alpha: 0.1),
+                    achievement.color.withValues(alpha: 0.1),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 )
               : LinearGradient(
                   colors: [
-                    Colors.grey.withOpacity(0.1),
-                    Colors.grey.withOpacity(0.05),
+                    Colors.grey.withValues(alpha: 0.1),
+                    Colors.grey.withValues(alpha: 0.05),
                   ],
                 ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isUnlocked 
-                ? achievement.rarity.color.withOpacity(0.3)
-                : Colors.grey.withOpacity(0.2),
+                ? achievement.rarity.color.withValues(alpha: 0.3)
+                : Colors.grey.withValues(alpha: 0.2),
             width: 2,
           ),
           boxShadow: isUnlocked
               ? [
                   BoxShadow(
-                    color: achievement.rarity.color.withOpacity(0.1),
+                    color: achievement.rarity.color.withValues(alpha: 0.1),
                     blurRadius: 8,
                     offset: Offset(0, 4),
                   ),
@@ -372,8 +372,8 @@ class _AchievementsViewState extends State<AchievementsView> {
               height: 60,
               decoration: BoxDecoration(
                 color: isUnlocked 
-                    ? achievement.color.withOpacity(0.2)
-                    : Colors.grey.withOpacity(0.2),
+                    ? achievement.color.withValues(alpha: 0.2)
+                    : Colors.grey.withValues(alpha: 0.2),
                 shape: BoxShape.circle,
                 border: Border.all(
                   color: isUnlocked 
@@ -415,7 +415,7 @@ class _AchievementsViewState extends State<AchievementsView> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: achievement.rarity.color.withOpacity(0.2),
+                  color: achievement.rarity.color.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: achievement.rarity.color,
@@ -435,7 +435,7 @@ class _AchievementsViewState extends State<AchievementsView> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.2),
+                  color: Colors.grey.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
@@ -490,8 +490,8 @@ class _AchievementsViewState extends State<AchievementsView> {
             gradient: isUnlocked
                 ? LinearGradient(
                     colors: [
-                      achievement.rarity.color.withOpacity(0.1),
-                      achievement.color.withOpacity(0.1),
+                      achievement.rarity.color.withValues(alpha: 0.1),
+                      achievement.color.withValues(alpha: 0.1),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -508,8 +508,8 @@ class _AchievementsViewState extends State<AchievementsView> {
                 height: 100,
                 decoration: BoxDecoration(
                   color: isUnlocked 
-                      ? achievement.color.withOpacity(0.2)
-                      : Colors.grey.withOpacity(0.2),
+                      ? achievement.color.withValues(alpha: 0.2)
+                      : Colors.grey.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: isUnlocked 
@@ -549,8 +549,8 @@ class _AchievementsViewState extends State<AchievementsView> {
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                   color: isUnlocked 
-                      ? achievement.rarity.color.withOpacity(0.2)
-                      : Colors.grey.withOpacity(0.2),
+                      ? achievement.rarity.color.withValues(alpha: 0.2)
+                      : Colors.grey.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: isUnlocked 
@@ -593,9 +593,9 @@ class _AchievementsViewState extends State<AchievementsView> {
                 Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.amber.withOpacity(0.1),
+                    color: Colors.amber.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.amber.withOpacity(0.3)),
+                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

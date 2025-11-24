@@ -51,7 +51,7 @@ class _DebugTestPageState extends State<DebugTestPage> {
           '🛠️ Debug Test Page',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.red.withOpacity(0.1),
+        backgroundColor: Colors.red.withValues(alpha: 0.1),
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
@@ -64,9 +64,9 @@ class _DebugTestPageState extends State<DebugTestPage> {
                   Container(
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.red.withOpacity(0.1),
+                      color: Colors.red.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.red.withOpacity(0.3)),
+                      border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
                     ),
                     child: Row(
                       children: [
@@ -222,7 +222,7 @@ class _DebugTestPageState extends State<DebugTestPage> {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
+                  color: color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(icon, color: color, size: 24),
@@ -310,7 +310,7 @@ class _DebugTestPageState extends State<DebugTestPage> {
     return Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(

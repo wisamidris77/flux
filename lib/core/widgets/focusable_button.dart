@@ -79,7 +79,7 @@ class _FocusableButtonState extends State<FocusableButton> {
                 }),
                 backgroundColor: WidgetStateProperty.resolveWith((states) {
                   if (states.contains(WidgetState.focused)) {
-                    return Theme.of(context).colorScheme.primary.withOpacity(0.1);
+                    return Theme.of(context).colorScheme.primary.withValues(alpha: 0.1);
                   }
                   return widget.style?.backgroundColor?.resolve(states);
                 }),
@@ -173,7 +173,7 @@ class _FocusableIconButtonState extends State<FocusableIconButton> {
               icon: widget.icon,
               style: IconButton.styleFrom(
                 backgroundColor: isFocused 
-                    ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
+                    ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
                     : null,
                 side: isFocused 
                     ? BorderSide(

@@ -28,7 +28,7 @@ class GamificationDisplay extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
           decoration: BoxDecoration(
-            color: _getLevelColor().withOpacity(0.1),
+            color: _getLevelColor().withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: _getLevelColor(), width: 1),
           ),
@@ -55,7 +55,7 @@ class GamificationDisplay extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
           decoration: BoxDecoration(
-            color: Colors.amber.withOpacity(0.1),
+            color: Colors.amber.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: Colors.amber, width: 1),
           ),
@@ -89,14 +89,14 @@ class GamificationDisplay extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            _getLevelColor().withOpacity(0.1),
-            _getLevelColor().withOpacity(0.05),
+            _getLevelColor().withValues(alpha: 0.1),
+            _getLevelColor().withValues(alpha: 0.05),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: _getLevelColor().withOpacity(0.3)),
+        border: Border.all(color: _getLevelColor().withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +107,7 @@ class GamificationDisplay extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: _getLevelColor().withOpacity(0.2),
+                  color: _getLevelColor().withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -142,7 +142,7 @@ class GamificationDisplay extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.amber.withOpacity(0.2),
+                  color: Colors.amber.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.amber),
                 ),
@@ -196,7 +196,7 @@ class GamificationDisplay extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: progress,
                   minHeight: 8,
-                  backgroundColor: Colors.grey.withOpacity(0.2),
+                  backgroundColor: Colors.grey.withValues(alpha: 0.2),
                   valueColor: AlwaysStoppedAnimation<Color>(_getLevelColor()),
                 ),
               ),
@@ -245,9 +245,9 @@ class GamificationDisplay extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [

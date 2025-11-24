@@ -336,7 +336,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.calendar_month, size: 64, color: Colors.grey.withOpacity(0.5)),
+          Icon(Icons.calendar_month, size: 64, color: Colors.grey.withValues(alpha: 0.5)),
           SizedBox(height: 16),
           Text(
             'Calendar view is currently disabled',
@@ -528,7 +528,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
             if (currentStreak > 0 && bestStreak > 0)
               LinearProgressIndicator(
                 value: currentStreak / bestStreak,
-                backgroundColor: Colors.grey.withOpacity(0.2),
+                backgroundColor: Colors.grey.withValues(alpha: 0.2),
                 color: _getStreakProgressColor(currentStreak, bestStreak),
                 minHeight: 8,
                 borderRadius: BorderRadius.circular(4),
@@ -617,9 +617,9 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
       margin: EdgeInsets.only(bottom: 12),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: insight['color'].withOpacity(0.1),
+        color: insight['color'].withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: insight['color'].withOpacity(0.3)),
+        border: Border.all(color: insight['color'].withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -814,7 +814,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
         Card(
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.blue.withOpacity(0.1),
+              backgroundColor: Colors.blue.withValues(alpha: 0.1),
               child: Icon(Icons.calendar_month, color: Colors.blue),
             ),
             title: Text('${DateFormat('MMMM yyyy').format(now)} Report'),
@@ -832,7 +832,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
         Card(
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.green.withOpacity(0.1),
+              backgroundColor: Colors.green.withValues(alpha: 0.1),
               child: Icon(Icons.auto_awesome, color: Colors.green),
             ),
             title: Text('$currentYear Year in Review'),
@@ -850,7 +850,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
         Card(
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.orange.withOpacity(0.1),
+              backgroundColor: Colors.orange.withValues(alpha: 0.1),
               child: Icon(Icons.view_week, color: Colors.orange),
             ),
             title: Text('This Week Report'),
@@ -1062,7 +1062,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
           borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
             colors: [
-              Theme.of(context).colorScheme.primary.withOpacity(0.7),
+              Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
               Theme.of(context).colorScheme.primary,
             ],
             begin: Alignment.topLeft,
@@ -1155,7 +1155,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
               Container(
                 padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -1257,10 +1257,10 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
                     width: 48,
                     height: 48,
                     decoration: BoxDecoration(
-                      color: _getAchievementColor(achievement).withOpacity(0.2),
+                      color: _getAchievementColor(achievement).withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: _getAchievementColor(achievement).withOpacity(0.5),
+                        color: _getAchievementColor(achievement).withValues(alpha: 0.5),
                         width: 2,
                       ),
                     ),
@@ -1420,10 +1420,10 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
           contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           leading: CircleAvatar(
             backgroundColor: entry.isSkipped 
-                ? Colors.orange.withOpacity(0.2)
+                ? Colors.orange.withValues(alpha: 0.2)
                 : isPositive 
-                    ? Colors.green.withOpacity(0.2) 
-                    : Colors.red.withOpacity(0.2),
+                    ? Colors.green.withValues(alpha: 0.2) 
+                    : Colors.red.withValues(alpha: 0.2),
             foregroundColor: entry.isSkipped 
                 ? Colors.orange
                 : isPositive 

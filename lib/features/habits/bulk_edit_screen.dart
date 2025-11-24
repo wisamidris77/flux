@@ -224,7 +224,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
                         ActionChip(
                           label: Text('Clear Filters'),
                           onPressed: _clearFilters,
-                          backgroundColor: Colors.grey.withOpacity(0.2),
+                          backgroundColor: Colors.grey.withValues(alpha: 0.2),
                         ),
                       ],
                     ],
@@ -288,7 +288,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
         ),
         child: Column(
           children: [
@@ -340,7 +340,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       decoration: BoxDecoration(
         color: isSelected 
-            ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
+            ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
             : null,
         borderRadius: BorderRadius.circular(12),
         border: isSelected 
@@ -356,8 +356,8 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
             : Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: habit.color?.withOpacity(0.1) ?? 
-                      Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                  color: habit.color?.withValues(alpha: 0.1) ?? 
+                      Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(

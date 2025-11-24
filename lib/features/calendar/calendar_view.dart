@@ -64,20 +64,20 @@ class _CalendarViewState extends State<CalendarView> {
     if (entries.isEmpty) {
       // Check if this day should have an entry based on frequency
       if (_shouldHaveEntry(day)) {
-        return Colors.red.withOpacity(0.3); // Missed day
+        return Colors.red.withValues(alpha: 0.3); // Missed day
       }
       return Colors.transparent; // No entry expected
     }
     
     final entry = entries.first;
     if (entry.isSkipped) {
-      return Colors.orange.withOpacity(0.4); // Skipped
+      return Colors.orange.withValues(alpha: 0.4); // Skipped
     }
     
     if (widget.habit.isPositiveDay(entry)) {
-      return Colors.green.withOpacity(0.6); // Success
+      return Colors.green.withValues(alpha: 0.6); // Success
     } else {
-      return Colors.red.withOpacity(0.6); // Failure
+      return Colors.red.withValues(alpha: 0.6); // Failure
     }
   }
 
@@ -180,7 +180,7 @@ class _CalendarViewState extends State<CalendarView> {
                   holidayTextStyle: TextStyle(color: Colors.red[600]),
                   defaultTextStyle: TextStyle(fontWeight: FontWeight.w500),
                   todayDecoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
                     shape: BoxShape.circle,
                   ),
                   selectedDecoration: BoxDecoration(
@@ -282,11 +282,11 @@ class _CalendarViewState extends State<CalendarView> {
               spacing: 16,
               runSpacing: 8,
               children: [
-                _buildLegendItem(Colors.green.withOpacity(0.6), 'Success'),
-                _buildLegendItem(Colors.red.withOpacity(0.6), 'Failure'),
-                _buildLegendItem(Colors.orange.withOpacity(0.4), 'Skipped'),
-                _buildLegendItem(Colors.red.withOpacity(0.3), 'Missed'),
-                _buildLegendItem(Colors.grey.withOpacity(0.1), 'No Entry'),
+                _buildLegendItem(Colors.green.withValues(alpha: 0.6), 'Success'),
+                _buildLegendItem(Colors.red.withValues(alpha: 0.6), 'Failure'),
+                _buildLegendItem(Colors.orange.withValues(alpha: 0.4), 'Skipped'),
+                _buildLegendItem(Colors.red.withValues(alpha: 0.3), 'Missed'),
+                _buildLegendItem(Colors.grey.withValues(alpha: 0.1), 'No Entry'),
               ],
             ),
           ],
@@ -305,7 +305,7 @@ class _CalendarViewState extends State<CalendarView> {
           decoration: BoxDecoration(
             color: color,
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.grey.withOpacity(0.3)),
+            border: Border.all(color: Colors.grey.withValues(alpha: 0.3)),
           ),
         ),
         SizedBox(width: 6),
@@ -368,17 +368,17 @@ class _CalendarViewState extends State<CalendarView> {
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: entry.isSkipped 
-            ? Colors.orange.withOpacity(0.1)
+            ? Colors.orange.withValues(alpha: 0.1)
             : isPositive 
-                ? Colors.green.withOpacity(0.1)
-                : Colors.red.withOpacity(0.1),
+                ? Colors.green.withValues(alpha: 0.1)
+                : Colors.red.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
           color: entry.isSkipped 
-              ? Colors.orange.withOpacity(0.3)
+              ? Colors.orange.withValues(alpha: 0.3)
               : isPositive 
-                  ? Colors.green.withOpacity(0.3)
-                  : Colors.red.withOpacity(0.3),
+                  ? Colors.green.withValues(alpha: 0.3)
+                  : Colors.red.withValues(alpha: 0.3),
         ),
       ),
       child: Column(

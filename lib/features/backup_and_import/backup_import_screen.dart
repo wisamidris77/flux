@@ -58,7 +58,7 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
             gradient: LinearGradient(
               colors: [
                 Theme.of(context).colorScheme.primary,
-                Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -107,15 +107,15 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.1),
-            Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -126,7 +126,7 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -205,9 +205,9 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
     return Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -312,9 +312,9 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
+                  color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
-                  border: Border.all(color: color.withOpacity(0.3), width: 2),
+                  border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
                 ),
                 child: Icon(icon, color: color, size: 30),
               ),
@@ -371,9 +371,9 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
             width: double.infinity,
             padding: EdgeInsets.all(32),
             decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.grey.withOpacity(0.3)),
+              border: Border.all(color: Colors.grey.withValues(alpha: 0.3)),
             ),
             child: Column(
               children: [
@@ -430,8 +430,8 @@ class _BackupImportScreenState extends State<BackupImportScreen> {
           height: 48,
           decoration: BoxDecoration(
             color: backup.isValid 
-                ? Colors.green.withOpacity(0.1)
-                : Colors.red.withOpacity(0.1),
+                ? Colors.green.withValues(alpha: 0.1)
+                : Colors.red.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: backup.isValid ? Colors.green : Colors.red,

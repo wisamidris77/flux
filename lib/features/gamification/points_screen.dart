@@ -393,7 +393,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
             gradient: LinearGradient(
               colors: [
                 Theme.of(context).colorScheme.primary,
-                Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -465,7 +465,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
                       Shadow(
                         offset: Offset(2, 2),
                         blurRadius: 4,
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black.withValues(alpha: 0.3),
                       ),
                     ],
                   ),
@@ -476,7 +476,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
               'Total Points',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.white.withValues(alpha: 0.9),
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -512,7 +512,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
           label,
           style: TextStyle(
             fontSize: 12,
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha: 0.8),
           ),
         ),
       ],
@@ -533,7 +533,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
                 Container(
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
@@ -645,8 +645,8 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
           gradient: isUnlocked
               ? LinearGradient(
                   colors: [
-                    Theme.of(context).colorScheme.primary.withOpacity(0.1),
-                    Theme.of(context).colorScheme.primary.withOpacity(0.05),
+                    Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                    Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -658,8 +658,8 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: isUnlocked
-                  ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
-                  : Colors.grey.withOpacity(0.2),
+                  ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -707,7 +707,7 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                      color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -766,8 +766,8 @@ class _PointsScreenState extends State<PointsScreen> with TickerProviderStateMix
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: canAfford
-                  ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
-                  : Colors.grey.withOpacity(0.2),
+                  ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(

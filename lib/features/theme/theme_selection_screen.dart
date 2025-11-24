@@ -223,13 +223,13 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
           border: Border.all(
             color: isSelected 
                 ? primaryColor
-                : Colors.grey.withOpacity(0.3),
+                : Colors.grey.withValues(alpha: 0.3),
             width: isSelected ? 3 : 1,
           ),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: primaryColor.withOpacity(0.3),
+                    color: primaryColor.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: Offset(0, 4),
                   ),
@@ -255,7 +255,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
                             width: 12,
                             height: 12,
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.8),
+                              color: Colors.white.withValues(alpha: 0.8),
                               shape: BoxShape.circle,
                             ),
                           ),
@@ -264,7 +264,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
                             width: 12,
                             height: 12,
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.6),
+                              color: Colors.white.withValues(alpha: 0.6),
                               shape: BoxShape.circle,
                             ),
                           ),
@@ -273,7 +273,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
                             width: 12,
                             height: 12,
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.4),
+                              color: Colors.white.withValues(alpha: 0.4),
                               shape: BoxShape.circle,
                             ),
                           ),
@@ -294,7 +294,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
                                 color: theme.cardColor,
                                 borderRadius: BorderRadius.circular(6),
                                 border: Border.all(
-                                  color: Colors.grey.withOpacity(0.2),
+                                  color: Colors.grey.withValues(alpha: 0.2),
                                 ),
                               ),
                             ),
@@ -385,7 +385,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
               if (!isUnlocked)
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.6),
+                    color: Colors.black.withValues(alpha: 0.6),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Center(
@@ -410,7 +410,7 @@ class _ThemeSelectionScreenState extends State<ThemeSelectionScreen> {
                         Text(
                           'Buy in Shop',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withValues(alpha: 0.8),
                             fontSize: 10,
                           ),
                         ),

@@ -347,7 +347,7 @@ class _CelebrationOverlayState extends State<CelebrationOverlay>
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              color: Colors.black.withOpacity(0.3),
+              color: Colors.black.withValues(alpha: 0.3),
             ),
           ),
           
@@ -413,7 +413,7 @@ class _CelebrationOverlayState extends State<CelebrationOverlay>
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: widget.achievement.definition.color.withOpacity(0.2),
+                            color: widget.achievement.definition.color.withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: widget.achievement.definition.color,
@@ -457,7 +457,7 @@ class _CelebrationOverlayState extends State<CelebrationOverlay>
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(
-                            color: widget.achievement.definition.rarity.color.withOpacity(0.2),
+                            color: widget.achievement.definition.rarity.color.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               color: widget.achievement.definition.rarity.color,

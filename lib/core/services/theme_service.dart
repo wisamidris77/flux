@@ -167,11 +167,11 @@ class ThemeService {
         brightness: useDark ? Brightness.dark : Brightness.light,
         primary: preset.primary,
         secondary: preset.secondary,
-        surface: useDark ? preset.surface.withOpacity(0.1) : preset.surface,
-        background: useDark ? preset.background.withOpacity(0.1) : preset.background,
+        surface: useDark ? preset.surface.withValues(alpha: 0.1) : preset.surface,
+        background: useDark ? preset.background.withValues(alpha: 0.1) : preset.background,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: preset.primary.withOpacity(0.1),
+        backgroundColor: preset.primary.withValues(alpha: 0.1),
         foregroundColor: useDark ? Colors.white : Colors.black87,
         elevation: 0,
         centerTitle: false,
@@ -190,8 +190,8 @@ class ThemeService {
         ),
         filled: true,
         fillColor: useDark 
-            ? preset.surface.withOpacity(0.1) 
-            : preset.surface.withOpacity(0.3),
+            ? preset.surface.withValues(alpha: 0.1) 
+            : preset.surface.withValues(alpha: 0.3),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -217,9 +217,9 @@ class ThemeService {
       ),
       sliderTheme: SliderThemeData(
         activeTrackColor: preset.primary,
-        inactiveTrackColor: preset.primary.withOpacity(0.3),
+        inactiveTrackColor: preset.primary.withValues(alpha: 0.3),
         thumbColor: preset.primary,
-        overlayColor: preset.primary.withOpacity(0.1),
+        overlayColor: preset.primary.withValues(alpha: 0.1),
       ),
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.resolveWith((states) {
@@ -230,7 +230,7 @@ class ThemeService {
         }),
         trackColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return preset.primary.withOpacity(0.5);
+            return preset.primary.withValues(alpha: 0.5);
           }
           return null;
         }),
@@ -309,7 +309,7 @@ class ThemeService {
   
   static TextStyle getBodyTextStyle(ThemeData theme) {
     return theme.textTheme.bodyMedium?.copyWith(
-      color: theme.colorScheme.onSurface.withOpacity(0.8),
+      color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
     ) ?? TextStyle();
   }
   
@@ -330,7 +330,7 @@ class ThemeService {
       borderRadius: BorderRadius.circular(16),
       boxShadow: [
         BoxShadow(
-          color: theme.shadowColor.withOpacity(0.1),
+          color: theme.shadowColor.withValues(alpha: 0.1),
           blurRadius: 8,
           offset: Offset(0, 2),
         ),
@@ -361,7 +361,7 @@ class ThemeService {
         brightness: Brightness.light,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: accentColor.withOpacity(0.1),
+        backgroundColor: accentColor.withValues(alpha: 0.1),
         elevation: 0,
         centerTitle: false,
       ),
