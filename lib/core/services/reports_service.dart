@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/main.dart';
 import 'package:intl/intl.dart';
-import 'package:collection/collection.dart';
 
 class ReportsService {
   // Generate Year in Review report

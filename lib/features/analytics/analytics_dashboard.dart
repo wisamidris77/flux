@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flux/core/enums/app_enums.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/main.dart';
 import 'package:intl/intl.dart';
 import 'package:collection/collection.dart';
 
@@ -12,7 +10,7 @@ class AnalyticsDashboard extends StatefulWidget {
   final List<Habit> habits;
   final bool showBackButton;
   
-  const AnalyticsDashboard({required this.habits, this.showBackButton = true});
+  const AnalyticsDashboard({super.key, required this.habits, this.showBackButton = true});
   
   @override
   _AnalyticsDashboardState createState() => _AnalyticsDashboardState();
@@ -266,7 +264,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCartesianChart(
                 primaryXAxis: DateTimeAxis(
@@ -314,7 +312,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCartesianChart(
                 primaryXAxis: DateTimeAxis(
@@ -357,7 +355,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCartesianChart(
                 primaryXAxis: CategoryAxis(),
@@ -396,7 +394,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCircularChart(
                 legend: Legend(isVisible: true, position: LegendPosition.bottom),
@@ -437,7 +435,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCircularChart(
                 legend: Legend(isVisible: true, position: LegendPosition.bottom),
@@ -476,7 +474,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 300,
               child: SfCartesianChart(
                 primaryXAxis: CategoryAxis(),
@@ -513,7 +511,7 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 200,
               child: Center(
                 child: Column(
@@ -568,8 +566,9 @@ class _AnalyticsDashboardState extends State<AnalyticsDashboard> with TickerProv
     final strength = correlation.coefficient.abs();
     String strengthText = '';
     
-    if (strength > 0.7) strengthText = 'Strong';
-    else if (strength > 0.4) strengthText = 'Moderate';
+    if (strength > 0.7) {
+      strengthText = 'Strong';
+    } else if (strength > 0.4) strengthText = 'Moderate';
     else strengthText = 'Weak';
     
     return Container(

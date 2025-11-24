@@ -8,7 +8,7 @@ import 'package:flux/core/services/data_service.dart';
 import 'package:intl/intl.dart';
 
 class BackupImportScreen extends StatefulWidget {
-  const BackupImportScreen({Key? key}) : super(key: key);
+  const BackupImportScreen({super.key});
   
   @override
   _BackupImportScreenState createState() => _BackupImportScreenState();

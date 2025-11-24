@@ -8,7 +8,7 @@ import 'package:flux/core/services/theme_service.dart';
 import 'package:flux/data/achievements/achievement_base.dart';
 
 class DebugTestPage extends StatefulWidget {
-  const DebugTestPage({Key? key}) : super(key: key);
+  const DebugTestPage({super.key});
   
   @override
   _DebugTestPageState createState() => _DebugTestPageState();

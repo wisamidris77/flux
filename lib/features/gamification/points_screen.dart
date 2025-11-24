@@ -6,6 +6,8 @@ import 'package:flux/core/services/theme_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PointsScreen extends StatefulWidget {
+  const PointsScreen({super.key});
+
   @override
   _PointsScreenState createState() => _PointsScreenState();
 }

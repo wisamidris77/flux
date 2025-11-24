@@ -5,7 +5,6 @@ import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:uuid/uuid.dart';
 
 class DatabaseService {
   static final DatabaseService _instance = DatabaseService._internal();

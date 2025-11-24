@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:flux/core/services/database_service.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/main.dart';
 import 'package:path_provider/path_provider.dart';
 
 class StorageService {

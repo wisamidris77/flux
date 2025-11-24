@@ -1,11 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:flux/core/enums/app_enums.dart';
 import 'package:flux/core/services/database_service.dart';
 import 'package:flux/data/models/habit.dart';
-import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/core/services/storage_service.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:csv/csv.dart';
@@ -435,7 +431,7 @@ class DataService {
     report.writeln('-' * 20);
     for (var habit in habits) {
       report.writeln();
-      report.writeln('${habit.formattedName}');
+      report.writeln(habit.formattedName);
       report.writeln('  Type: ${habit.type.toString().split('.').last}');
       if (habit.category != null) report.writeln('  Category: ${habit.category}');
       report.writeln('  Frequency: ${habit.frequency.toString().split('.').last}');

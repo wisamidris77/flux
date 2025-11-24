@@ -7,7 +7,7 @@ import 'package:flux/core/services/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AchievementsView extends StatefulWidget {
-  const AchievementsView({Key? key}) : super(key: key);
+  const AchievementsView({super.key});
   
   @override
   _AchievementsViewState createState() => _AchievementsViewState();

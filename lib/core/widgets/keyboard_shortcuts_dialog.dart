@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KeyboardShortcutsDialog extends StatelessWidget {
-  const KeyboardShortcutsDialog({Key? key}) : super(key: key);
+  const KeyboardShortcutsDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,7 @@ class KeyboardShortcutsDialog extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(4),
                   border: Border.all(
                     color: Theme.of(context).colorScheme.outline.withOpacity(0.3),
@@ -135,7 +135,7 @@ class KeyboardShortcutsDialog extends StatelessWidget {
               ),
             ],
           ),
-        )).toList(),
+        )),
       ],
     );
   }

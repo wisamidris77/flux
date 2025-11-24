@@ -3,21 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flux/core/enums/app_enums.dart';
 import 'package:flux/data/models/habit.dart';
-import 'package:flux/main.dart';
-import 'package:flutter/material.dart';
 import 'package:flux/features/habits/add_entry_dialog.dart';
-import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
 import 'package:flux/core/services/storage_service.dart';
-import 'package:flux/features/calendar/calendar_view.dart';
-import 'package:flux/features/analytics/analytics_dashboard.dart';
 import 'package:flux/core/services/data_service.dart';
 import 'package:flux/core/services/reports_service.dart';
 import 'package:intl/intl.dart';
 
 class HabitDetailScreen extends StatefulWidget {
   final Habit habit;
-  HabitDetailScreen({required this.habit});
+  const HabitDetailScreen({super.key, required this.habit});
   
   @override
   _HabitDetailScreenState createState() => _HabitDetailScreenState();
@@ -299,8 +294,8 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddEntryDialog,
-        child: Icon(Icons.add),
         tooltip: 'Add Entry',
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -425,7 +420,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Container(
+            SizedBox(
               height: 200,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -1039,7 +1034,7 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
       children: [
         _buildStatItem('Total Days Tracked', days.toString()),
         _buildStatItem('Total Count Sum', '$totalCount'),
-        _buildStatItem('Average Count per Day', '${avgPerDay.toStringAsFixed(2)}'),
+        _buildStatItem('Average Count per Day', avgPerDay.toStringAsFixed(2)),
         if (maxCount > 0)
           _buildStatItem('Highest Count ($maxCount) on Day(s)', maxDays.join(', ')),
       ],

@@ -5,7 +5,6 @@ import 'package:flux/core/enums/app_enums.dart';
 import 'package:home_widget/home_widget.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/core/services/storage_service.dart';
-import 'package:flux/main.dart';
 
 class WidgetService {
   static const String _widgetName = 'FluxHabitWidget';

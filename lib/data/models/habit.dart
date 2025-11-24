@@ -1,10 +1,8 @@
 // lib/main.dart
 
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flux/core/enums/app_enums.dart'; // Import enums from the new file
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import 'dart:math';
 

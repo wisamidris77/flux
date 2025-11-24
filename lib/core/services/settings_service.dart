@@ -1,7 +1,6 @@
 // lib/main.dart
 
 import 'package:flux/core/enums/app_enums.dart';
-import 'package:flux/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsService {

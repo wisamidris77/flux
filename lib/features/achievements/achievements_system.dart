@@ -267,10 +267,10 @@ class CelebrationOverlay extends StatefulWidget {
   final VoidCallback onComplete;
   
   const CelebrationOverlay({
-    Key? key,
+    super.key,
     required this.achievement,
     required this.onComplete,
-  }) : super(key: key);
+  });
   
   @override
   _CelebrationOverlayState createState() => _CelebrationOverlayState();

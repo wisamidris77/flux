@@ -11,14 +11,14 @@ class FocusableButton extends StatefulWidget {
   final FocusNode? focusNode;
 
   const FocusableButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.child,
     this.style,
     this.enabled = true,
     this.tooltip,
     this.focusNode,
-  }) : super(key: key);
+  });
 
   @override
   State<FocusableButton> createState() => _FocusableButtonState();
@@ -71,20 +71,20 @@ class _FocusableButtonState extends State<FocusableButton> {
             child: ElevatedButton(
               onPressed: widget.enabled ? _handlePressed : null,
               style: widget.style?.copyWith(
-                elevation: MaterialStateProperty.resolveWith((states) {
-                  if (states.contains(MaterialState.focused)) {
+                elevation: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.focused)) {
                     return 8.0;
                   }
                   return widget.style?.elevation?.resolve(states) ?? 2.0;
                 }),
-                backgroundColor: MaterialStateProperty.resolveWith((states) {
-                  if (states.contains(MaterialState.focused)) {
+                backgroundColor: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.focused)) {
                     return Theme.of(context).colorScheme.primary.withOpacity(0.1);
                   }
                   return widget.style?.backgroundColor?.resolve(states);
                 }),
-                side: MaterialStateProperty.resolveWith((states) {
-                  if (states.contains(MaterialState.focused)) {
+                side: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.focused)) {
                     return BorderSide(
                       color: Theme.of(context).colorScheme.primary,
                       width: 2.0,
@@ -110,13 +110,13 @@ class FocusableIconButton extends StatefulWidget {
   final bool enabled;
 
   const FocusableIconButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.icon,
     this.tooltip,
     this.focusNode,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   State<FocusableIconButton> createState() => _FocusableIconButtonState();

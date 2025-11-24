@@ -5,17 +5,16 @@ import 'package:flux/data/models/habit_entry.dart';
 import 'package:flux/core/services/storage_service.dart';
 import 'package:flux/features/achievements/achievements_system.dart';
 import 'package:flux/core/services/notification_service.dart';
-import 'package:flux/main.dart';
 
 class QuickEntryWidget extends StatefulWidget {
   final List<Habit> habits;
   final Function() onUpdate;
   
   const QuickEntryWidget({
-    Key? key,
+    super.key,
     required this.habits,
     required this.onUpdate,
-  }) : super(key: key);
+  });
   
   @override
   _QuickEntryWidgetState createState() => _QuickEntryWidgetState();
@@ -318,10 +317,10 @@ class QuickEntryDialog extends StatefulWidget {
   final Function(HabitEntry) onSave;
   
   const QuickEntryDialog({
-    Key? key,
+    super.key,
     required this.habit,
     required this.onSave,
-  }) : super(key: key);
+  });
   
   @override
   _QuickEntryDialogState createState() => _QuickEntryDialogState();
@@ -419,7 +418,7 @@ class _QuickEntryDialogState extends State<QuickEntryDialog> {
                     Switch(
                       value: _isDone,
                       onChanged: (value) => setState(() => _isDone = value),
-                      activeColor: Colors.green,
+                      activeThumbColor: Colors.green,
                     ),
                   ],
                 ),

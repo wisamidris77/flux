@@ -5,22 +5,13 @@ import 'package:flux/features/habits/add_habit_sheet.dart';
 import 'package:flux/main.dart';
 import 'package:flux/features/settings/settings_screen.dart';
 import 'package:flux/features/analytics/analytics_dashboard.dart';
-import 'package:flux/core/services/data_service.dart';
 import 'package:flux/core/services/reports_service.dart';
-import 'dart:convert';
-import 'dart:io';
-import 'package:flux/features/habits/add_entry_dialog.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/features/habits/habit_detail_screen.dart';
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/features/home/home_screen.dart';
-import 'package:flux/core/services/settings_service.dart';
 import 'package:flux/core/services/storage_service.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
-import 'package:flux/features/habits/quick_entry_widget.dart';
 import 'package:flux/features/habits/bulk_edit_screen.dart';
 import 'package:flux/core/services/widget_service.dart';
 import 'package:flux/features/achievements/achievements_view.dart';
@@ -36,7 +27,7 @@ class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
   final Function(String)? changeTheme;
   
-  HomeScreen({
+  const HomeScreen({super.key, 
     required this.toggleTheme, 
     required this.isDarkMode,
     this.changeTheme,
@@ -250,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   Navigator.pop(context);
                 },
               ),
-            )).toList(),
+            )),
           ],
         ),
       ),
@@ -832,7 +823,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       return SizedBox();
     }
     
-    return Container(
+    return SizedBox(
       height: 220,
       child: Card(
         elevation: 2,
@@ -854,7 +845,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Text(
                             _habits[value.toInt()].name.length > 6
-                                ? _habits[value.toInt()].name.substring(0, 6) + '...'
+                                ? '${_habits[value.toInt()].name.substring(0, 6)}...'
                                 : _habits[value.toInt()].name,
                             style: TextStyle(fontSize: 12),
                           ),

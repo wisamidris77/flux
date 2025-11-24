@@ -5,14 +5,13 @@ import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
 import 'package:flux/features/habits/add_entry_dialog.dart';
 import 'package:flux/core/services/storage_service.dart';
-import 'package:flux/main.dart';
 import 'package:intl/intl.dart';
 
 class CalendarView extends StatefulWidget {
   final Habit habit;
   final Function() onRefresh;
   
-  const CalendarView({required this.habit, required this.onRefresh});
+  const CalendarView({super.key, required this.habit, required this.onRefresh});
   
   @override
   _CalendarViewState createState() => _CalendarViewState();
@@ -354,7 +353,7 @@ class _CalendarViewState extends State<CalendarView> {
                 style: TextStyle(color: Colors.grey[600]),
               )
             else
-              ...entries.map((entry) => _buildEntryInfo(entry)).toList(),
+              ...entries.map((entry) => _buildEntryInfo(entry)),
           ],
         ),
       ),

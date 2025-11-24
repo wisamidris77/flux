@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flux/core/enums/app_enums.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/data/models/habit_entry.dart';
-import 'package:flux/main.dart';
 
 class AddEntryDialog extends StatefulWidget {
   final Habit habit;
   final int dayNumber;
   final Function(HabitEntry) onSave;
 
-  const AddEntryDialog({required this.habit, required this.dayNumber, required this.onSave});
+  const AddEntryDialog({super.key, required this.habit, required this.dayNumber, required this.onSave});
 
   @override
   _AddEntryDialogState createState() => _AddEntryDialogState();
@@ -198,7 +197,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                 }
               });
             },
-            activeColor: Colors.orange,
+            activeThumbColor: Colors.orange,
           ),
         ],
       ),
@@ -235,7 +234,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
                     _isDone = value;
                   });
                 },
-                activeColor: Theme.of(context).colorScheme.primary,
+                activeThumbColor: Theme.of(context).colorScheme.primary,
               ),
             ],
           ),
@@ -782,7 +781,7 @@ class _AddEntryDialogState extends State<AddEntryDialog> with TickerProviderStat
     } else {
       value = double.tryParse(_valueController.text);
       if (value != null) {
-        count = value! > 0 ? 1 : 0; // Set count based on whether value was entered
+        count = value > 0 ? 1 : 0; // Set count based on whether value was entered
       }
     }
 

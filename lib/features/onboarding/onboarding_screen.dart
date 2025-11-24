@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flux/core/enums/app_enums.dart';
-import 'package:flux/main.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/core/services/storage_service.dart';
 import 'package:flux/features/home/home_screen.dart';
@@ -10,14 +9,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 class OnboardingScreen extends StatefulWidget {
   final Function(String?)? onComplete;
 
-  OnboardingScreen({this.onComplete});
+  const OnboardingScreen({super.key, this.onComplete});
 
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> with TickerProviderStateMixin {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentStep = 0;
 
   late AnimationController _headerAnimationController;
@@ -26,15 +25,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
 
   // User selections
   String? _selectedQuest;
-  List<String> _selectedAreas = [];
-  Map<String, List<String>> _selectedGoals = {};
+  final List<String> _selectedAreas = [];
+  final Map<String, List<String>> _selectedGoals = {};
   String? _energyLevel;
   String? _timePreference;
   String? _timeAvailability;
   String? _habitPreference;
   String? _startingApproach;
   List<Habit> _suggestedHabits = [];
-  List<Habit> _selectedHabits = [];
+  final List<Habit> _selectedHabits = [];
   bool _wantsReminders = false;
   String? _reminderTime;
   String? _selectedTheme;
@@ -357,7 +356,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               onChanged: (value) => _toggleGoalSelection(area, goal),
               activeColor: _stepColors[_currentStep],
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -470,7 +469,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                 ),
                 value: _wantsReminders,
                 onChanged: (value) => setState(() => _wantsReminders = value),
-                activeColor: _stepColors[_currentStep],
+                activeThumbColor: _stepColors[_currentStep],
               ),
               if (_wantsReminders) ...[
                 SizedBox(height: 16),
@@ -478,7 +477,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                 SizedBox(height: 8),
                 ...['🌅 Morning (8-9 AM)', '☀️ Afternoon (1-2 PM)', '🌙 Evening (7-8 PM)'].map((time) {
                   return _buildSelectionCard(title: time, isSelected: _reminderTime == time, onTap: () => setState(() => _reminderTime = time));
-                }).toList(),
+                }),
               ],
             ],
           ),
@@ -689,7 +688,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
               onChanged: (value) => onChanged(value!),
               activeColor: _stepColors[_currentStep],
             );
-          }).toList(),
+          }),
         ],
       ),
     );

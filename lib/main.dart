@@ -12,7 +12,6 @@ import 'package:flux/features/onboarding/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flux/core/services/storage_service.dart';
 import 'package:flux/core/services/keyboard_service.dart';
-import 'package:flux/core/widgets/keyboard_aware_widget.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() async {
@@ -73,7 +72,7 @@ class HabitTrackerApp extends StatefulWidget {
   final String selectedTheme;
   final bool isFirstLaunch;
   
-  HabitTrackerApp({
+  const HabitTrackerApp({super.key, 
     required this.isDarkMode,
     required this.selectedTheme,
     required this.isFirstLaunch,
@@ -171,7 +170,7 @@ class HabitListItem extends StatelessWidget {
   final Habit habit;
   final VoidCallback onTap;
   
-  const HabitListItem({required this.habit, required this.onTap});
+  const HabitListItem({super.key, required this.habit, required this.onTap});
   
   @override
   Widget build(BuildContext context) {

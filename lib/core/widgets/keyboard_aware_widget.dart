@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flux/core/services/keyboard_service.dart';
 
 class KeyboardAwareWidget extends StatefulWidget {
@@ -23,7 +22,7 @@ class KeyboardAwareWidget extends StatefulWidget {
   final List<FocusNode> focusableNodes;
 
   const KeyboardAwareWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.scrollController,
     this.onPreviousPage,
@@ -42,7 +41,7 @@ class KeyboardAwareWidget extends StatefulWidget {
     this.onPoints,
     this.onShowKeyboardShortcuts,
     this.focusableNodes = const [],
-  }) : super(key: key);
+  });
 
   @override
   State<KeyboardAwareWidget> createState() => _KeyboardAwareWidgetState();

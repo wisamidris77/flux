@@ -4,20 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flux/core/enums/app_enums.dart';
-import 'package:flux/main.dart';
 import 'package:flux/core/services/settings_service.dart';
 import 'package:flux/features/theme/theme_selection_screen.dart';
 import 'package:flux/features/debug/debug_test_page.dart';
 import 'package:flux/features/backup_and_import/backup_import_screen.dart';
-import 'package:flux/core/services/notification_service.dart';
-import 'package:flux/core/services/storage_service.dart';
-import 'package:flux/data/models/habit.dart';
 
 class SettingsScreen extends StatefulWidget {
   final VoidCallback toggleTheme;
   final bool isDarkMode;
   
-  SettingsScreen({required this.toggleTheme, required this.isDarkMode});
+  const SettingsScreen({super.key, required this.toggleTheme, required this.isDarkMode});
   
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
@@ -316,7 +312,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         if (_notificationsEnabled) ...[
           ListTile(
             title: Text('Default Reminder Time'),
-            subtitle: Text('${_reminderTime}:00'),
+            subtitle: Text('$_reminderTime:00'),
             leading: Icon(Icons.access_time),
             trailing: Icon(Icons.arrow_forward_ios, size: 16),
             onTap: _showTimeSelector,

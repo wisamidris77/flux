@@ -3,15 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flux/core/enums/app_enums.dart';
 import 'package:flux/data/models/habit.dart';
-import 'package:flux/main.dart';
-import 'package:flutter/material.dart';
-import 'package:flux/data/models/habit.dart';
 import 'package:flux/core/services/settings_service.dart';
 
 class AddHabitSheet extends StatefulWidget {
   final Function(Habit) onSave;
   final List<String> existingCategories;
-  AddHabitSheet({required this.onSave, this.existingCategories = const []});
+  const AddHabitSheet({super.key, required this.onSave, this.existingCategories = const []});
   @override _AddHabitSheetState createState() => _AddHabitSheetState();
 }
 
@@ -28,7 +25,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
   Color _color = Color(0xFF1DB954);
   HabitFrequency _frequency = HabitFrequency.Daily;
   HabitUnit _unit = HabitUnit.Count;
-  List<int> _customDays = [];
+  final List<int> _customDays = [];
   String? _selectedCategory;
   bool _hasMeasurableGoal = false;
   
@@ -510,7 +507,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
   
   Widget _buildUnitSelector() {
     return DropdownButtonFormField<HabitUnit>(
-      value: _unit,
+      initialValue: _unit,
       decoration: InputDecoration(
         filled: true,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
@@ -584,7 +581,7 @@ class _AddHabitSheetState extends State<AddHabitSheet> with TickerProviderStateM
   }
   
   Widget _buildColorSelector() {
-    return Container(
+    return SizedBox(
       height: 60,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

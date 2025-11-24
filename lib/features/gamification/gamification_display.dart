@@ -6,10 +6,10 @@ class GamificationDisplay extends StatelessWidget {
   final bool isCompact;
   
   const GamificationDisplay({
-    Key? key,
+    super.key,
     required this.habit,
     this.isCompact = false,
-  }) : super(key: key);
+  });
   
   @override
   Widget build(BuildContext context) {

@@ -7,9 +7,9 @@ class ThemeSelectionScreen extends StatefulWidget {
   final Function(ThemeData) onThemeChanged;
   
   const ThemeSelectionScreen({
-    Key? key,
+    super.key,
     required this.onThemeChanged,
-  }) : super(key: key);
+  });
   
   @override
   _ThemeSelectionScreenState createState() => _ThemeSelectionScreenState();

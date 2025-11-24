@@ -6,6 +6,8 @@ import 'package:flux/core/widgets/keyboard_shortcuts_dialog.dart';
 /// Example of how to implement keyboard navigation in other screens
 /// This shows the pattern for integrating keyboard shortcuts into any screen
 class ExampleScreenWithKeyboardNavigation extends StatefulWidget {
+  const ExampleScreenWithKeyboardNavigation({super.key});
+
   @override
   _ExampleScreenWithKeyboardNavigationState createState() => _ExampleScreenWithKeyboardNavigationState();
 }
@@ -224,6 +226,8 @@ class _ExampleScreenWithKeyboardNavigationState extends State<ExampleScreenWithK
 
 /// Example of how to add custom keyboard shortcuts for a specific screen
 class CustomKeyboardShortcutsExample extends StatefulWidget {
+  const CustomKeyboardShortcutsExample({super.key});
+
   @override
   _CustomKeyboardShortcutsExampleState createState() => _CustomKeyboardShortcutsExampleState();
 }
@@ -351,7 +355,7 @@ class _CustomKeyboardShortcutsExampleState extends State<CustomKeyboardShortcuts
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surfaceVariant,
+              color: Theme.of(context).colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(4),
               border: Border.all(
                 color: Theme.of(context).colorScheme.outline.withOpacity(0.3),

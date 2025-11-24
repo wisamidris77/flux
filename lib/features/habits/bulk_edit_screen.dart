@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flux/core/enums/app_enums.dart';
 import 'package:flux/data/models/habit.dart';
 import 'package:flux/core/services/storage_service.dart';
-import 'package:flux/main.dart';
 
 class BulkEditScreen extends StatefulWidget {
   final List<Habit> habits;
   
   const BulkEditScreen({
-    Key? key,
+    super.key,
     required this.habits,
-  }) : super(key: key);
+  });
   
   @override
   _BulkEditScreenState createState() => _BulkEditScreenState();
@@ -478,7 +477,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Filter by Category'),
-        content: Container(
+        content: SizedBox(
           width: double.maxFinite,
           child: ListView(
             shrinkWrap: true,
@@ -511,7 +510,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Filter by Type'),
-        content: Container(
+        content: SizedBox(
           width: double.maxFinite,
           child: ListView(
             shrinkWrap: true,
@@ -544,7 +543,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Filter by Status'),
-        content: Container(
+        content: SizedBox(
           width: double.maxFinite,
           child: ListView(
             shrinkWrap: true,
@@ -666,7 +665,7 @@ class _BulkEditScreenState extends State<BulkEditScreen> {
             Text('Select or enter a new category for ${habits.length} habit${habits.length == 1 ? '' : 's'}:'),
             SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: selectedCategory,
+              initialValue: selectedCategory,
               decoration: InputDecoration(
                 labelText: 'Existing Categories',
                 border: OutlineInputBorder(),
