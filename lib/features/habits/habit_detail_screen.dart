@@ -264,10 +264,10 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
           controller: _tabController,
           isScrollable: true,
           tabs: [
+            Tab(icon: Icon(Icons.history), text: 'Entries'),
             Tab(icon: Icon(Icons.info), text: 'Overview'),
             Tab(icon: Icon(Icons.calendar_month), text: 'Calendar'),
             Tab(icon: Icon(Icons.analytics), text: 'Analytics'),
-            Tab(icon: Icon(Icons.history), text: 'Entries'),
             Tab(icon: Icon(Icons.assessment), text: 'Reports'),
           ],
         ),
@@ -285,10 +285,10 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> with SingleTicker
       body: TabBarView(
         controller: _tabController,
         children: [
+          _buildEntriesTab(),
           _buildOverviewTab(),
           _buildCalendarTab(),
           _buildAnalyticsTab(),
-          _buildEntriesTab(),
           _buildReportsTab(),
         ],
       ),
