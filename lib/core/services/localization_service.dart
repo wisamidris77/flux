@@ -117,7 +117,7 @@ class LocalizationService {
   bool get isCurrentLanguageRTL => isRTL(currentLanguageCode);
 
   // Get text direction
-  TextDirection get textDirection => isCurrentLanguageRTL ? TextDirection.rtl : TextDirection.ltr;
+  TextDirection get textDirection => isCurrentLanguageRTL ? TextDirection.RTL : TextDirection.LTR;
 
   // Track missing translations (debug only)
   static void trackMissingTranslation(String key, String languageCode) {

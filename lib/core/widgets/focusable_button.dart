@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flux/core/services/keyboard_service.dart';
 
 class FocusableButton extends StatefulWidget {
@@ -64,9 +65,7 @@ class _FocusableButtonState extends State<FocusableButton> {
         return KeyEventResult.ignored;
       },
       child: Builder(
-        builder: (context) {
-          final isFocused = Focus.of(context).hasFocus;
-          
+        builder: (context) {          
           return Tooltip(
             message: widget.tooltip ?? '',
             child: ElevatedButton(
