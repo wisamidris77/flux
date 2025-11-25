@@ -47,7 +47,7 @@ jobs:
 
       # NEW STEP: Compress the build folder into a ZIP file
       - name: Compress Build
-        run: Compress-Archive -Path build/windows/runner/Release/* -DestinationPath flux-windows.zip
+        run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath flux-windows.zip
 
       - name: Upload Windows
         uses: actions/upload-artifact@v4
