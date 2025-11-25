@@ -45,7 +45,7 @@ jobs:
           echo "storeFile=upload-keystore.jks" >> android/key.properties
 
       - name: Build APK (Release)
-        run: flutter build apk --release
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
@@ -73,7 +73,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Windows Release
-        run: flutter build windows --release
+        run: flutter build windows --release --no-tree-shake-icons
 
       # Windows builds are folders, so we must zip them before uploading
       - name: Compress Build to ZIP
