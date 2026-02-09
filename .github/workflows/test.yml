@@ -80,6 +80,19 @@ jobs:
       - name: Build Windows app
         run: flutter build windows --release --no-tree-shake-icons
 
+      - name: Smoke Test (Run app)
+        shell: pwsh
+        run: |
+          $process = Start-Process -FilePath "build/windows/runner/Release/flux.exe" -PassThru
+          Start-Sleep -Seconds 15
+          if ($process.HasExited) {
+            Write-Error "App crashed or exited early! Exit code: $($process.ExitCode)"
+            exit 1
+          } else {
+            Write-Host "App is still running after 15 seconds. Startup successful."
+            Stop-Process -Id $process.Id
+          }
+
       - name: Upload Windows build
         uses: actions/upload-artifact@v4
         with:
@@ -129,6 +142,20 @@ jobs:
           flutter pub get
       - name: Build Linux app
         run: flutter build linux --release --no-tree-shake-icons
+
+      - name: Smoke Test (Run app)
+        run: |
+          sudo apt-get install -y xvfb
+          xvfb-run ./build/linux/x64/release/bundle/flux &
+          APP_PID=$!
+          sleep 15
+          if kill -0 $APP_PID 2>/dev/null; then
+            echo "App is still running after 15 seconds. Startup successful."
+            kill $APP_PID
+          else
+            echo "App crashed or exited early! Check the logs above."
+            exit 1
+          fi
 
       - name: Upload Linux build
         uses: actions/upload-artifact@v4

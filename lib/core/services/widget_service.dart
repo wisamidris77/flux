@@ -11,13 +11,19 @@ class WidgetService {
   
   // Initialize home widget
   static Future<void> initialize() async {
-    if (!Platform.isWindows) {
-      await HomeWidget.setAppGroupId('group.flux.habittracker');
+    if (Platform.isAndroid || Platform.isIOS) {
+      try {
+        await HomeWidget.setAppGroupId('group.flux.habittracker');
+      } catch (e) {
+        debugPrint('Error initializing home widget: $e');
+      }
     }
   }
   
   // Update all home screen widgets
   static Future<void> updateHomeWidgets() async {
+    if (!(Platform.isAndroid || Platform.isIOS)) return;
+    
     try {
       final habits = await StorageService.loadAll();
       final activeHabits = habits.where((h) => !h.isArchived && !h.isPaused).toList();
@@ -191,6 +197,8 @@ class WidgetService {
   
   // Update widget when habit is completed
   static Future<void> onHabitCompleted(Habit habit) async {
+    if (!(Platform.isAndroid || Platform.isIOS)) return;
+    
     await updateHomeWidgets();
     
     // Show notification if all habits are completed
@@ -208,13 +216,19 @@ class WidgetService {
     }).length;
     
     if (dueToday > 0 && completedToday == dueToday) {
-      await HomeWidget.saveWidgetData<String>('celebrationMessage', '🎉 All habits completed today!');
-      await HomeWidget.updateWidget(name: _widgetName);
+      try {
+        await HomeWidget.saveWidgetData<String>('celebrationMessage', '🎉 All habits completed today!');
+        await HomeWidget.updateWidget(name: _widgetName);
+      } catch (e) {
+        debugPrint('Error updating celebration widget: $e');
+      }
     }
   }
   
   // Handle widget tap actions
   static Future<void> handleWidgetTap(String action) async {
+    if (!(Platform.isAndroid || Platform.isIOS)) return;
+    
     switch (action) {
       case 'open_app':
         // This would typically open the main app
@@ -230,12 +244,7 @@ class WidgetService {
   
   // Check if widgets are supported on this platform
   static Future<bool> isWidgetSupported() async {
-    try {
-      // This is a simple check - in reality you'd check platform capabilities
-      return true;
-    } catch (e) {
-      return false;
-    }
+    return Platform.isAndroid || Platform.isIOS;
   }
   
   // Get widget configuration options
