@@ -83,7 +83,7 @@ jobs:
       - name: Smoke Test (Run app)
         shell: pwsh
         run: |
-          $process = Start-Process -FilePath "build/windows/runner/Release/flux.exe" -PassThru
+          $process = Start-Process -FilePath "build/windows/x64/runner/Release/flux.exe" -PassThru
           Start-Sleep -Seconds 15
           if ($process.HasExited) {
             Write-Error "App crashed or exited early! Exit code: $($process.ExitCode)"
@@ -97,7 +97,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-windows
-          path: build/windows/runner/Release/
+          path: build/windows/x64/runner/Release/
 
   # ────────────────────────────────
   macos:
