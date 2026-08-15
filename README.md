@@ -53,11 +53,6 @@ Flux is a modern, intuitive habit tracking application designed to help you buil
    ```bash
    flutter run
    ```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🪲 Feedback & Contribution
 I built this for the community, and I'd love to hear what you think.
 
@@ -65,8 +60,13 @@ All feedback is welcome, whether it's a feature request or a bug report.
 
 If you're a developer, I invite you to check out the GitHub repo. Starring the project ⭐ helps with its visibility and lets me know you find it useful. Contributions, PRs, and issue reports are, of course, always welcome!
 
-## 🔍 About
+## License
 
-Flux helps you build better habits through consistent tracking and meaningful insights. Whether you're trying to exercise more, read daily, or break a bad habit, Flux provides the tools you need to succeed.
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
 
-Check out my X for news about flux: https://x.com/IdrisWisam
+- **Free to use & study:** Anyone can use, inspect, and modify the code.
+- **Strictly Non-Commercial:** No selling, no paywalls, no ads, no monetization of any kind.
+- **ShareAlike:** All forks and derivative works must remain open under this exact same license.
+- **Attribution:** Any redistribution must credit **Wisam Idris** as the original author.
+
+See the full [LICENSE](LICENSE) file for details.
